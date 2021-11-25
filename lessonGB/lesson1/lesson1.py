@@ -33,7 +33,6 @@ while counter < len(user_var_input):
 print(max_element)
 
 # 5
-
 valueFirst = int(input())
 valueSecond = int(input())
 if valueFirst >= valueSecond:
@@ -45,7 +44,6 @@ else:
     print("не Profit...")
 
 # 6
-
 a, b = map(float, input().split())
 day = 1
 while a < b:

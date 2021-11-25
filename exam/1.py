@@ -1,28 +1,19 @@
-import decimal
-import time
 def fib(n):
-    decimal.getcontext().prec = 1000000000
-    root_5 = decimal.Decimal(5).sqrt()
-    phi = ((1 + root_5) / 2)
-    a = ((phi ** n) - ((-phi) ** -n)) / root_5
-    return round(a)
+    result_fib = 0
+    x_ray = [1, 3, 7, 14, 29, 59, 118, 236, 472, 944, 1889, 3779, 7558, 15117, 30234, 60469, 120938, 241876, 483752,
+             967505, 1935011, 3870023, 7740046, 15480093, 30960187, 61920374, 123840749, 247681498]
+    a, b = 0, 1
+    for i in range(n):
+        a, b = b, a + b
+        print(i)
+        if i < 123840750:
+            if i + 1 in x_ray:
+                result_fib += a
+    return a + result_fib
 
-def get_hash_sum():
-    n = 247681498
-    res = 0
-    while n > 0:
-        res += fib(n)
-        n = n // 2 if n % 2 == 0 else (n - 1) // 2
 
-    return res & 0xffffffffffffffff
+def get_hash_sum(number_user):
+    return number_user & 0xffffffffffffffff
 
-#
-# def main():
-#     print(f'Flag is Course{{{get_hash_sum()}}}')
-#
-#
-# if __name__ == '__main__':
-#     main()
-start_time = time.time()
-print(fib(247681498))
-print("--- %s seconds ---" % (time.time() - start_time))
+print(f'Flag is Course{{{get_hash_sum(247681498446548413846321354958955874596132479568273333149765461321)}}}')
+print(bin(0xffffffffffffffff))

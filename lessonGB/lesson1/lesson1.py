@@ -45,6 +45,7 @@ else:
     print("не Profit...")
 
 # 6
+
 a, b = map(float, input().split())
 day = 1
 while a < b:
